@@ -9,7 +9,7 @@ This is a planner for a single day.
 This application allows a user to save tasks for a standard business day which is 9AM to 5PM.
 
 ## How does it work?
-A user will be able to save tasks in hourly timeslots for the current day they access the application.  Depending on the time fo day in their current location, historical timeslots will be XXXX.  The current time will be XXXXXXX.  Future times will be XXXXX.
+A user will be able to save tasks in hourly timeslots for the current day they access the application.  Depending on the time fo day in their current location, historical timeslots will be XXXX.  The current time will be red.  Future times will be green.
 
 ## Technologies
 

@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -30,53 +33,121 @@
     </header>
     <div class="container">
       <!-- Timeblocks go here -->
-      <div id="9hour" class="row block">
-        <div class="col-md-1 hour">
+      <div class="row">
+        <div id="9hour" class="col-1 hour">
           9AM
         </div>
+        <div class="col-10">
+          <textarea id="9task" class="col-12 time-block" type="text"></textarea>
+        </div>
+        <div class="col-1">
+          <button id="9save" class="col-12 saveBtn">Save</button>
+        </div>
       </div>
-      <div id="10hour" class="row block">
-        <div class="col-md-1 hour">
+
+      <div class="row">
+        <div id="10hour" class="col-1 hour">
           10AM
         </div>
+        <div class="col-10">
+          <textarea id="10task" class="col-12 time-block" type="text"></textarea>
+        </div>
+        <div class="col-1">
+          <button id="10save" class="col-12 saveBtn">Save</button>
+        </div>
       </div>
-      <div id="11hour" class="row block">
-        <div class="col-md-1 hour">
+
+      <div class="row">
+        <div id="11hour" class="col-1 hour">
           11AM
         </div>
-      </div>
-      <div id="12hour" class="row block">
-        <div class="col-md-1 hour">
-          12PM
+        <div class="col-10">
+          <textarea id="11task" class="col-12 time-block" type="text"></textarea>
         </div>
-      </div>
-      <div id="1hour" class="row block">
-        <div class="col-md-1 hour">
-          1PM
+        <div class="col-1">
+          <button id="11save" class="col-12 saveBtn">Save</button>
         </div>
+      </div>  
+ 
+    <div class="row">
+      <div id="12hour" class="col-1 hour">
+        12PM
       </div>
-      <div id="2hour" class="row block">
-        <div class="col-md-1 hour">
-          2PM
-        </div>
+      <div class="col-10">
+        <textarea id="12task" class="col-12 time-block" type="text"></textarea>
       </div>
-      <div id="3hour" class="row block">
-        <div class="col-md-1 hour">
-          3PM
-        </div>
+      <div class="col-1">
+        <button id="12save" class="col-12 saveBtn">Save</button>
       </div>
-      <div id="4hour" class="row block">
-        <div class="col-md-1 hour">
-          4PM
-        </div>
-      </div>
-      <div id="5hour" class="row block">
-        <div class="col-md-1 hour">
-          5PM
-        </div>
-      </div>
-    </div>
+    </div>  
 
+    <div class="row">
+      <div id="1hour" class="col-1 hour">
+        1PM
+      </div>
+      <div class="col-10">
+        <textarea id="1task" class="col-12 time-block" type="text"></textarea>
+      </div>
+      <div class="col-1">
+        <button id="1save" class="col-12 saveBtn">Save</button>
+      </div>
+    </div>  
+
+    <div class="row">
+      <div id="2hour" class="col-1 hour">
+        2PM
+      </div>
+      <div class="col-10">
+        <textarea id="2task" class="col-12 time-block" type="text"></textarea>
+      </div>
+      <div class="col-1">
+        <button id="2save" class="col-12 saveBtn">Save</button>
+      </div>
+    </div>  
+
+    <div class="row">
+      <div id="3hour" class="col-1 hour">
+        3PM
+      </div>
+      <div class="col-10">
+        <textarea id="3task" class="col-12 time-block" type="text"></textarea>
+      </div>
+      <div class="col-1">
+        <button id="3save" class="col-12 saveBtn">Save</button>
+      </div>
+    </div> 
+    
+    <div class="row">
+      <div id="4hour" class="col-1 hour">
+        4PM
+      </div>
+      <div class="col-10">
+        <textarea id="4task" class="col-12 time-block" type="text"></textarea>
+      </div>
+      <div class="col-1">
+        <button id="4save" class="col-12 saveBtn">Save</button>
+      </div>
+    </div>  
+
+    <div class="row">
+      <div id="5hour" class="col-1 hour">
+        5PM
+      </div>
+      <div class="col-10">
+        <textarea id="5task" class="col-12 time-block" type="text"></textarea>
+      </div>
+      <div class="col-1">
+        <button id="5save" class="col-12 saveBtn">Save</button>
+      </div>
+    </div> 
+  </div>
+
+    <!-- jquery  -->
+    <script type="text/javascript">
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
@@ -84,19 +155,22 @@
 
 
 <!-- on page load: 
-show calendar with today's date at the top
-show hourly slots from 9-5
+
+show hourly slots from 9-5 with input fields for each hour
+---use form with textareas.  append to row class
 
 find current time from the user's computer
+show calendar with current date at the top.  show in id=currentDay
 color code the hourly slots
 
 On click Save button for each hour slot:
-  save to local storage (eky pairs: time and input)
+  save to local storage (eky pairs: timeslot and user input)
   don't refresh page as want to see all data all the time
 
 
 functions:
 
+  renderTimeslots()
   currentTime()
-  updatePlanner()
+  saveTask()
   -->
