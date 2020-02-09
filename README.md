@@ -1,15 +1,15 @@
 ## Name and live url
 Stephanie Kuo Week5 - Day Planner
-https://sfds1.github.io/hw4quiz/ 
+https://sfds1.github.io/hw5dayplanner/
 
 ## Description
-This is a short quiz on application development languages
+This is a planner for a single day.
 
 ## What does the app do?
-This application runs a short 3 question quiz on development languages. 
+This application allows a user to save tasks for a standard business day which is 9AM to 5PM.
 
 ## How does it work?
-The application is a three question multiple choice quiz. In this quiz, the user will have to choose the correct answer out of three choices within 30 seconds. If the user answers the question correclty, the next question will appear.  If the user doesn't answer the question correctly, a 10 second time deduction penalty will happen. A high score table can be saved and viewed.
+A user will be able to save tasks in hourly timeslots for the current day they access the application.  Depending on the time fo day in their current location, historical timeslots will be XXXX.  The current time will be XXXXXXX.  Future times will be XXXXX.
 
 ## Technologies
 
@@ -17,25 +17,43 @@ The application is a three question multiple choice quiz. In this quiz, the user
 This application uses Javascript, CSS, HTML, Bootstrap
 
 ## Challenges
-This assignment was challenging all around.  Functions are crazy and trying to tie all that we have learned together is a big task.
+This application 
 
 ## Your experience building this app
-This app took me a while to complete as it is hard to work on things piecemeal.  I am finding that trying to do this part time while working is harder than I thought, but I am learning each day so that is good.
+This application 
 
 ## What was difficult
 Trying to remember all the right syntax.
 
 ## What did you learn
-I learned more about functions and localStorage
+I learned more about
 
 ## How did you go about solving a problem
-Many, times I had to Google items to further my knowledge in a topic.  Thank ngoodness for all the people who like to post things online.
+Many, times I had to Google items to further my knowledge in a topic.  Thank goodness for all the people who like to post things online.
 
 ## Screenshot
 
-I tried to paste a screenshot here but it wouldn't paste so let me know how to do that.  Thanks.
+
 
 
 ## Live app, not code
 
-Not sure what goes here.  Let me know.  Thanks.
+
+
+
+Required
+Clean code - indentation and spacing is correct, console logs, commented-out code and unnecessary comments are removed
+Proper file structure - CSS, JS and images are in assets folder, index.html in root folder, file and folder names are not capitalized and don’t contain spaces
+README.md - see our MD Guide
+Polished UI - the app should look good, be responsive, and fully functional
+Uses Moment library to capture date and time information
+Application displays timeblocks for standard business hours
+Each time block contains a label, an input field, and save button
+Clicking on a time block’s save button saves the input text to local storage, allowing the text to persist when the application is refreshed
+The current day is displayed at the top of the calendar
+Each timeblock is color coded to indicate whether it is in a past, present or future hour
+Bonus
+Detailed pseudocode - refer to Musa’s example from week 4
+Current time is displayed at the top of the calendar (hours, mins, and secs)
+Notifications for successful save
+Delete buttons on each time block
