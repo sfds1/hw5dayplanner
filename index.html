@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+    <!-- jQuery link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- moment links -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <link
       rel="stylesheet"
@@ -50,7 +55,7 @@
           10AM
         </div>
         <div class="col-10">
-          <textarea id="10task" class="col-12 time-block" type="text"></textarea>
+          <textarea id="10task" class="col-12 time-block" name ="10task" type="text"></textarea>
         </div>
         <div class="col-1">
           <button id="10save" class="col-12 saveBtn">Save</button>
@@ -127,6 +132,7 @@
       <div class="col-1">
         <button id="4save" class="col-12 saveBtn">Save</button>
       </div>
+  
     </div>  
 
     <div class="row">
@@ -145,19 +151,45 @@
     <!-- jquery  -->
     <script type="text/javascript">
 
+    // This "document.ready" code isn't necessary in this example... but is useful to become familiar with.
+    // "document.ready" makes sure that our JavaScript doesn't get run until the HTML document is finished loading.
+      $(document).ready(function() {
+
+    // Puts the current date in the #currentDay ID field that is in the p tags
+    $("#currentDay").text(moment().format('dddd, MMMM Do'));
+
+    var $taskInput = document.querySelector("#todo-text");
+    
+
+      // Here we use jQuery to select the header with "click-me" as its ID.
+      // Notice I have the #click-me, click, and then the function
+      // So $("#id|.class|element").on("action", function(){});
+      // And so whenever it is clicked...
+      $(".saveBtn").on("click", function() {
+        // not have the page refresh
+        event.preventDefault();
+        console.log(document.querySelector('#task'));
+        // set variables to time block
+  
+        const $taskInput = document.querySelector('#task');
+
+
+        localStorage.setItem("timeblock", $time);
+        localStorage.setItem("todo", $taskInput);
+
+      });
+    
+    });
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
   </body>
 </html>
 
 
 <!-- on page load: 
 
-show hourly slots from 9-5 with input fields for each hour
----use form with textareas.  append to row class
+show hourly slots from 9-5 with input fields for each hour with a save button
 
 find current time from the user's computer
 show calendar with current date at the top.  show in id=currentDay
