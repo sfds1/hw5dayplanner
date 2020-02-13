@@ -1,189 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- jQuery link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- moment links -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <!-- jQuery link -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
+  <!-- moment links -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-    </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
-      <div class="row">
-        <div id="9hour" class="col-1 hour">
-          9AM
-        </div>
-        <div class="col-10">
-          <textarea id="9task" class="col-12 time-block" type="text"></textarea>
-        </div>
-        <div class="col-1">
-          <button id="9save" class="col-12 saveBtn">Save</button>
-        </div>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <title>Work Day Scheduler</title>
+</head>
+
+<body>
+  <header class="jumbotron">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+  <div class="container">
+    <!-- Timeblocks go here -->
+    <div class="row">
+      <div id="9hour" class="col-1 hour">
+        9AM
       </div>
-
-      <div class="row">
-        <div id="10hour" class="col-1 hour">
-          10AM
-        </div>
-        <div class="col-10">
-          <textarea id="10task" class="col-12 time-block" name ="10task" type="text"></textarea>
-        </div>
-        <div class="col-1">
-          <button id="10save" class="col-12 saveBtn">Save</button>
-        </div>
+      <div class="col-10">
+        <textarea id="9-task" class="col-12 time-block" type="text"></textarea>
       </div>
+      <div class="col-1">
+        <button id="9save" class="col-12 saveBtn">Save</button>
+      </div>
+    </div>
 
-      <div class="row">
-        <div id="11hour" class="col-1 hour">
-          11AM
-        </div>
-        <div class="col-10">
-          <textarea id="11task" class="col-12 time-block" type="text"></textarea>
-        </div>
-        <div class="col-1">
-          <button id="11save" class="col-12 saveBtn">Save</button>
-        </div>
-      </div>  
- 
+    <div class="row">
+      <div id="10hour" class="col-1 hour">
+        10AM
+      </div>
+      <div class="col-10">
+        <textarea id="10-task" class="col-12 time-block" name="10task" type="text"></textarea>
+      </div>
+      <div class="col-1">
+        <button id="10save" class="col-12 saveBtn">Save</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="11hour" class="col-1 hour">
+        11AM
+      </div>
+      <div class="col-10">
+        <textarea id="11-task" class="col-12 time-block" type="text"></textarea>
+      </div>
+      <div class="col-1">
+        <button id="11save" class="col-12 saveBtn">Save</button>
+      </div>
+    </div>
+
     <div class="row">
       <div id="12hour" class="col-1 hour">
         12PM
       </div>
       <div class="col-10">
-        <textarea id="12task" class="col-12 time-block" type="text"></textarea>
+        <textarea id="12-task" class="col-12 time-block" type="text"></textarea>
       </div>
       <div class="col-1">
         <button id="12save" class="col-12 saveBtn">Save</button>
       </div>
-    </div>  
+    </div>
 
     <div class="row">
       <div id="1hour" class="col-1 hour">
         1PM
       </div>
       <div class="col-10">
-        <textarea id="1task" class="col-12 time-block" type="text"></textarea>
+        <textarea id="13-task" class="col-12 time-block" type="text"></textarea>
       </div>
       <div class="col-1">
         <button id="1save" class="col-12 saveBtn">Save</button>
       </div>
-    </div>  
+    </div>
 
     <div class="row">
       <div id="2hour" class="col-1 hour">
         2PM
       </div>
       <div class="col-10">
-        <textarea id="2task" class="col-12 time-block" type="text"></textarea>
+        <textarea id="14-task" class="col-12 time-block" type="text"></textarea>
       </div>
       <div class="col-1">
         <button id="2save" class="col-12 saveBtn">Save</button>
       </div>
-    </div>  
+    </div>
 
     <div class="row">
       <div id="3hour" class="col-1 hour">
         3PM
       </div>
       <div class="col-10">
-        <textarea id="3task" class="col-12 time-block" type="text"></textarea>
+        <textarea id="15-task" class="col-12 time-block" type="text"></textarea>
       </div>
       <div class="col-1">
-        <button id="3save" class="col-12 saveBtn">Save</button>
+        <button id="save" class="col-12 saveBtn">Save</button>
       </div>
-    </div> 
-    
+    </div>
+
     <div class="row">
       <div id="4hour" class="col-1 hour">
         4PM
       </div>
       <div class="col-10">
-        <textarea id="4task" class="col-12 time-block" type="text"></textarea>
+        <textarea id="16-task" class="col-12 time-block" type="text"></textarea>
       </div>
       <div class="col-1">
         <button id="4save" class="col-12 saveBtn">Save</button>
       </div>
-  
-    </div>  
+
+    </div>
 
     <div class="row">
       <div id="5hour" class="col-1 hour">
         5PM
       </div>
       <div class="col-10">
-        <textarea id="5task" class="col-12 time-block" type="text"></textarea>
+        <textarea id="17-task" class="col-12 time-block" type="text"></textarea>
       </div>
       <div class="col-1">
         <button id="5save" class="col-12 saveBtn">Save</button>
       </div>
-    </div> 
+    </div>
   </div>
 
-    <!-- jquery  -->
-    <script type="text/javascript">
+  <!-- jquery  -->
+  <script type="text/javascript">
 
     // This "document.ready" code isn't necessary in this example... but is useful to become familiar with.
     // "document.ready" makes sure that our JavaScript doesn't get run until the HTML document is finished loading.
-      $(document).ready(function() {
+    $(document).ready(function () {
 
-    // Puts the current date in the #currentDay ID field that is in the p tags
-    $("#currentDay").text(moment().format('dddd, MMMM Do'));
+      var plan = JSON.parse(localStorage.getItem("schedule"))
+      if (!plan) {
+        plan = {}
+      }
 
-    var $taskInput = document.querySelector("#todo-text");
-    
+      for (key in plan) {
+        console.log(key, plan[key])
+        $("#" + key).val(plan[key])
+      }
+      rendercolors();
+
+      // Puts the current date in the #currentDay ID field that is in the p tags
+      $("#currentDay").text(moment().format('dddd, MMMM Do'));
+
+
 
       // Here we use jQuery to select the header with "click-me" as its ID.
       // Notice I have the #click-me, click, and then the function
       // So $("#id|.class|element").on("action", function(){});
       // And so whenever it is clicked...
-      $(".saveBtn").on("click", function() {
+      $(".saveBtn").on("click", function () {
         // not have the page refresh
         event.preventDefault();
-        console.log(document.querySelector('#task'));
+        console.log(this);
+
+        // variable to pull in the info from the id. this based off of saave button so have to go up
+        // the tree (DOM)
+        var btnid = $(this).parent().parent().find("textarea").attr("id")
+        // variable to get the user inputted info
+        var input = $(this).parent().parent().find("textarea").val()
+        console.log(btnid, input)
+
+        plan[btnid] = input
+        console.log(plan)
+        localStorage.setItem("schedule", JSON.stringify(plan))
         // set variables to time block
-  
-        const $taskInput = document.querySelector('#task');
 
-
-        localStorage.setItem("timeblock", $time);
-        localStorage.setItem("todo", $taskInput);
 
       });
-    
+
+      function rendercolors() {
+        var currentHour = moment().hour();
+
+        console.log(currentHour);
+        $(".time-block").each(function () {
+          var hour = parseInt($(this).attr("id").split("-")[0]);
+          console.log(hour);
+          if (hour < currentHour) {
+            $(this).addClass("past");
+          } else if (hour === currentHour) {
+            $(this).remove("past")
+            $(this).addClass("present");
+          } else {
+            $(this).remove("past")
+            $(this).remove("present");
+            $(this).addClass("future");
+          }
+        })
+
+
+      }
+      // current time
+      // loop document all the elements with the class ? base on time time //
+      // add and remove classes
+
     });
-    </script>
+
+  </script>
 
 
-  </body>
+</body>
+
 </html>
 
 
@@ -191,12 +225,12 @@
 
 show hourly slots from 9-5 with input fields for each hour with a save button
 
-find current time from the user's computer
+find current time using moment.js
 show calendar with current date at the top.  show in id=currentDay
 color code the hourly slots
 
 On click Save button for each hour slot:
-  save to local storage (eky pairs: timeslot and user input)
+  save to local storage (key pairs: timeslot and user input)
   don't refresh page as want to see all data all the time
 
 

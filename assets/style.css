@@ -28,13 +28,13 @@ textarea{
 
 .time-block{
   text-align: left;
-  /* border-radius: 15px; */
+  /* border-radius: ; */
   background-color: pink;
   height: 79px;
 }
 
 .row {
-  /* white-space: pre-wrap; */
+  /* white-space: pre-wrap;15px */
   height: 80px;
   border-top: 1px solid black;;
 }
