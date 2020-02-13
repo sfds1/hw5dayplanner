@@ -9,27 +9,29 @@ This is a planner for a single day.
 This application allows a user to save tasks for a standard business day which is 9AM to 5PM.
 
 ## How does it work?
-A user will be able to save tasks in hourly timeslots for the current day they access the application.  Depending on the time fo day in their current location, historical timeslots will be XXXX.  The current time will be red.  Future times will be green.
+A user will be able to save tasks in hourly timeslots for the current day that they access the application.  Depending on the time of day, the timeslots will change color. Historical timeslots will be grey.  The current time will be red.  Future times will be green.
 
 ## Technologies
 
 ## Languages, frameworks, various tools
-This application uses Javascript, CSS, HTML, Bootstrap
+This application uses JQuery, CSS, HTML, Bootstrap
 
 ## Challenges
-This application 
+This application is interesting as in the beginning I was thinking I could dynamically create the hour timeslots to make the code really small.  Maybe there is a way, but I thought about it later and each timeslot needs a unique ID to tie to the tasks entered so that when the information is stored in to local storage, the time and tasks are related.
+
+Moment.js documentation was a lot ot get through.
 
 ## Your experience building this app
-This application 
+This application was fun to build.
 
 ## What was difficult
 Trying to remember all the right syntax.
 
 ## What did you learn
-I learned more about
+I learned more about moment.js, local Storage and traversing the DOM
 
 ## How did you go about solving a problem
-Many, times I had to Google items to further my knowledge in a topic.  Thank goodness for all the people who like to post things online.
+My tutor was great in helping me start on a resolution to the problems I had.
 
 ## Screenshot
 

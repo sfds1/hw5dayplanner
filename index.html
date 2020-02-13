@@ -29,6 +29,7 @@
   </header>
   <div class="container">
     <!-- Timeblocks go here -->
+    <!-- Ids for each text area are in 24 hour time so can compare with the moment hour time -->
     <div class="row">
       <div id="9hour" class="col-1 hour">
         9AM
@@ -146,20 +147,22 @@
     // "document.ready" makes sure that our JavaScript doesn't get run until the HTML document is finished loading.
     $(document).ready(function () {
 
+    // Create a variable that will 
       var plan = JSON.parse(localStorage.getItem("schedule"))
+
+      // If an object does not exist, then create one.
       if (!plan) {
         plan = {}
       }
-
+      // loop through the object and return the value based on the key
       for (key in plan) {
-        console.log(key, plan[key])
+        // console.log(key, plan[key])
         $("#" + key).val(plan[key])
       }
-      rendercolors();
+      renderColors();
 
       // Puts the current date in the #currentDay ID field that is in the p tags
       $("#currentDay").text(moment().format('dddd, MMMM Do'));
-
 
 
       // Here we use jQuery to select the header with "click-me" as its ID.
@@ -169,30 +172,46 @@
       $(".saveBtn").on("click", function () {
         // not have the page refresh
         event.preventDefault();
-        console.log(this);
+        // console.log(this);
 
-        // variable to pull in the info from the id. this based off of saave button so have to go up
-        // the tree (DOM)
+        // variable to pull in the info from the id. this based off of save button so have to go up
+        // the tree (DOM).  Find the textarea and take value of the ID.  Since IDs are usnique this should be
+        // fine as there should only be one value
         var btnid = $(this).parent().parent().find("textarea").attr("id")
+        
         // variable to get the user inputted info
         var input = $(this).parent().parent().find("textarea").val()
-        console.log(btnid, input)
+        // console.log(btnid, input)
 
+        // set the object plan with btnid = key and input = value
         plan[btnid] = input
-        console.log(plan)
+        // console.log(plan)
+
+        // set the local storage item to the key value pairs in the plan object
         localStorage.setItem("schedule", JSON.stringify(plan))
         // set variables to time block
 
 
       });
 
-      function rendercolors() {
+      // Get the hourly timeslots to change color
+      function renderColors() {
+
+        // get the current time
         var currentHour = moment().hour();
 
-        console.log(currentHour);
+        // console.log(currentHour);
+
+        // for each class of time-block do the following:
         $(".time-block").each(function () {
+
+          // Get the timeblock hour from the id in the text area div.  have to split the ID as only
+          // need the time portion and make it an integer
           var hour = parseInt($(this).attr("id").split("-")[0]);
-          console.log(hour);
+          // console.log(hour);
+
+          // Compare the timeslot hour to the current moment hour and change the colors by the class accordingly
+          // have to delete the previous ones added so the correct one will show as the time changes
           if (hour < currentHour) {
             $(this).addClass("past");
           } else if (hour === currentHour) {
@@ -207,21 +226,17 @@
 
 
       }
-      // current time
-      // loop document all the elements with the class ? base on time time //
-      // add and remove classes
 
     });
 
   </script>
-
 
 </body>
 
 </html>
 
 
-<!-- on page load: 
+<!-- pseudocode on page load: 
 
 show hourly slots from 9-5 with input fields for each hour with a save button
 
@@ -230,13 +245,11 @@ show calendar with current date at the top.  show in id=currentDay
 color code the hourly slots
 
 On click Save button for each hour slot:
-  save to local storage (key pairs: timeslot and user input)
+  save to local storage (key pair: timeslot and user input)
   don't refresh page as want to see all data all the time
 
 
 functions:
 
-  renderTimeslots()
-  currentTime()
-  saveTask()
+  renderColors()
   -->
